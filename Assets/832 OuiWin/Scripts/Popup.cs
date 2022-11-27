@@ -6,10 +6,6 @@ public class Popup : MonoBehaviour
 {
     public void SetData(UnityAction action)
     {
-        GetComponentInChildren<Button>().onClick.AddListener(action);
-        GetComponentInChildren<Button>().onClick.AddListener(() =>
-        {
-            Destroy(gameObject);
-        });
+        GetComponent<Button>().onClick.AddListener(action);
     }
 }
