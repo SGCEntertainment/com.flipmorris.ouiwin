@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Slot : MonoBehaviour
 {
+    private bool IsSpinning { get; set; }
     private Text textComponent;
 
     private void Awake()
@@ -11,12 +12,19 @@ public class Slot : MonoBehaviour
         textComponent = GetComponent<Text>();
         GameManager.OnHandlePulled += () =>
         {
+            if(IsSpinning)
+            {
+                return;
+            }
+
             StartCoroutine(nameof(SpinMe));
         };
     }
 
     private IEnumerator SpinMe()
     {
+        IsSpinning = true;
+
         while(true)
         {
             textComponent.text = GameManager.Instance.GetRandomLetter().ToString();
@@ -28,5 +36,7 @@ public class Slot : MonoBehaviour
     {
         StopCoroutine(nameof(SpinMe));
         GameManager.Instance.inputString += textComponent.text;
+
+        IsSpinning = false;
     }
 }

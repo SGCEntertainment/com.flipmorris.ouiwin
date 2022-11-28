@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
             GameObject _popupGO = Instantiate(popupPrefab, GameObject.Find("screen").transform);
             _popupGO.GetComponent<Popup>().SetData(() =>
             {
+                GameManager.Instance.RestartGame();
                 Destroy(_popupGO);
             });
         };

@@ -11,11 +11,15 @@ public class GameManager : MonoBehaviour
     public string inputString = string.Empty;
     private readonly char[] letters = new char[] { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
+    private bool IsStarted;
+    private int index = 0;
     public Slot[] slots;
 
     public void Spin()
     {
+        RestartGame();
         OnHandlePulled?.Invoke();
+        IsStarted = true;
     }
 
     public void Check()
@@ -30,6 +34,19 @@ public class GameManager : MonoBehaviour
 
     public void StopSomeSlot()
     {
+        if(index > slots.Length - 1 || !IsStarted)
+        {
+            IsStarted = false;
+            return;
+        }
 
+        slots[index].StopMe();
+        index++;
+    }
+
+    public void RestartGame()
+    {
+        index = 0;
+        inputString = string.Empty;
     }
 }

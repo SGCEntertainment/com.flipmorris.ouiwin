@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8179334669165386549}
   - component: {fileID: 1194898635431576682}
   - component: {fileID: 339506114678502099}
+  - component: {fileID: 8147428776234257968}
+  - component: {fileID: 8927259324352707537}
   m_Layer: 0
   m_Name: win
   m_TagString: Untagged
@@ -120,3 +122,30 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8147428776234257968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933153417433804512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88c02771beb21549a13440889366108, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!111 &8927259324352707537
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5933153417433804512}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: f0c84541fac9b3e4ea988258d97882c7, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
